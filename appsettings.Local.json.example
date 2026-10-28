@@ -1,0 +1,4 @@
+{
+  "ConnectionStrings": { "Default": "Host=YOUR_NEON_HOST;Database=neondb;Username=neondb_owner;Password=YOUR_PASSWORD;SSL Mode=Require;Trust Server Certificate=true" },
+  "Jwt": { "Key": "YOUR_LONG_RANDOM_KEY" }
+}
