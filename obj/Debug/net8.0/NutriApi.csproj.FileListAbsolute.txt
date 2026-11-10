@@ -114,3 +114,4 @@ D:\PROJECT-SUSHIL\Latest\nutri-source\nutri\NutriApi\obj\Debug\net8.0\refint\Nut
 D:\PROJECT-SUSHIL\Latest\nutri-source\nutri\NutriApi\obj\Debug\net8.0\NutriApi.pdb
 D:\PROJECT-SUSHIL\Latest\nutri-source\nutri\NutriApi\obj\Debug\net8.0\NutriApi.genruntimeconfig.cache
 D:\PROJECT-SUSHIL\Latest\nutri-source\nutri\NutriApi\obj\Debug\net8.0\ref\NutriApi.dll
+D:\PROJECT-SUSHIL\Latest\nutri-source\nutri\NutriApi\obj\Debug\net8.0\NutriApi.sourcelink.json
