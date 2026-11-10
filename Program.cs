@@ -12,10 +12,12 @@ var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(b.Configuration["Jwt:K
 b.Services.AddAuthentication("Bearer").AddJwtBearer(o =>
     o.TokenValidationParameters = new() { IssuerSigningKey = key, ValidateIssuer = false, ValidateAudience = false });
 b.Services.AddAuthorization();
-var origins = (b.Configuration["Cors:Origins"] ?? "http://localhost:5173").Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
-b.Services.AddCors(o => o.AddDefaultPolicy(p => p.WithOrigins(origins).AllowAnyHeader().AllowAnyMethod()));
-var app = b.Build();
-app.UseCors(); app.UseAuthentication(); app.UseAuthorization();
+var origins = (b.Configuration["Cors:Origins"] ?? "")
+    .Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+
+b.Services.AddCors(o => o.AddPolicy("web", p =>
+    p.WithOrigins(origins).AllowAnyHeader().AllowAnyMethod()));var app = b.Build();
+app.UseCors("web"); app.UseAuthentication(); app.UseAuthorization();
 
 // ---- migrate + seed first admin
 using (var s = app.Services.CreateScope())
